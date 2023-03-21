@@ -2,7 +2,7 @@ import { Loading } from 'notiflix';
 import { Component } from 'react';
 
 export default class Load extends Component {
-  componentDidUnmount() {
+  componentWillUnmount() {
     Loading.remove();
   }
   render() {
