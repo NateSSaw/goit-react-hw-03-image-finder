@@ -84,7 +84,18 @@ export default class ImageGallery extends Component {
     if (status === Status.IDLE)
       return <h2 className="title">Enter you request</h2>;
     if (status === Status.PENDING) return <Load />;
-    if (status === Status.REJECTED) return <h2 className="title">{error}</h2>;
+    if (status === Status.REJECTED)
+      return (
+        <div className="Error">
+          <h2 className="title">{error}</h2>
+          <img
+            src="https://www.2dsl.ru/wp-content/uploads/kak-ispravit-oshibku-404not-found-469152c.jpg"
+            alt="error 404"
+            width="1000"
+            height="1000"
+          />
+        </div>
+      );
     if (status === Status.RESOLVED)
       return (
         <div>
