@@ -7,14 +7,13 @@ export default class Searchbar extends Component {
   };
 
   handleChange = e => {
-    const { target } = e;
-    const { value } = target;
-    this.setState({ value });
+    this.setState({ value: e.currentTarget.value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.handleSearch(this.state.value);
+    this.setState({ value: '' });
   };
 
   render() {
@@ -28,8 +27,8 @@ export default class Searchbar extends Component {
           <input
             className={css.SearchForm__input}
             type="text"
-            autocomplete="off"
-            autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
             onChange={this.handleChange}
             value={this.state.value}
