@@ -6,6 +6,6 @@ export default class Load extends Component {
     Loading.remove();
   }
   render() {
-    return Loading.standard(), setTimeout(Loading.remove(), 2000);
+    return Loading.standard();
   }
 }
